@@ -1,5 +1,5 @@
-# Block Matrix Multiply
-Start by copying your code from your Naive Matrix Multiply.  Update this to use the block matrix multiplication method instead.
+# Naive Matrix Multiply
+This is the starter code for a CPU-based Naive matrix multiply.  This implementation should have 3 nested for loops.
 
 ## Report
-As with before, run `time` and see what the results are now.  How has it changed?  Why has it changed?
+For your report, please execute the `time` command and store the result.  Consider what each of these three metrics mean.
