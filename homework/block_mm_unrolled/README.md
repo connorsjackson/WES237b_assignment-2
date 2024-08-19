@@ -1,5 +1,5 @@
-# Unrolled Block Matrix Multiply
-Start by copying your code from the block matrix multiply.  Then perform some loop unrolling such that you have four elements in a single loop.  Consider what happens when your matricies are not divisble by four.
+# Naive Matrix Multiply
+This is the starter code for a CPU-based Naive matrix multiply.  This implementation should have 3 nested for loops.
 
 ## Report
-Once again, run `time` and compare the results.  What has changed?  Why has it changed?
+For your report, please execute the `time` command and store the result.  Consider what each of these three metrics mean.
