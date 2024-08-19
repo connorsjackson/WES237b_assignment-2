@@ -14,6 +14,8 @@ endif
 
 all: solution
 
+CFLAGS += -O1 -ftree-vectorize
+
 solution: ../../helper_lib/helper_lib.a main.c
 	$(CC) $(CFLAGS) -o $@ $^ $(INCFLAGS) $(LDFLAGS)
 

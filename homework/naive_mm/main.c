@@ -13,6 +13,27 @@
 void NaiveMatrixMultiply(Matrix *input0, Matrix *input1, Matrix *result)
 {
     //@@ Insert code to implement naive matrix multiply here
+    int row_size_input0 = (*input0).shape[0]; //i iterator, # rows
+    int col_size_input1 = input1->shape[1]; //j iterator, # cols
+    int col_size_input0 = input0->shape[1]; //k iterator, # cols; could have used row_size_input1 instead.
+
+    for (int i = 0; i<row_size_input0; i++){
+        for (int j = 0; j<col_size_input1;j++){
+            for (int k = 0; k<col_size_input0; k++){
+                (*result).data[i*col_size_input1+j] += (*input0).data[i*col_size_input0+k] * (*input1).data[k*col_size_input1+j];
+            }
+        }
+    }
+
+    /* My pseudocode is below, more mathematical
+    for (int i = 0; i<row_size_input0; i++){
+        for (int j = 0; j<col_size_input1;j++){
+            for (int k = 0; k<col_size_input0; k++){
+                result[i,j] += input_0[i,k] * input_1[k,j];
+            }
+        }
+    }
+    */
 }
 
 int main(int argc, char *argv[])
@@ -45,6 +66,8 @@ int main(int argc, char *argv[])
     int rows, cols;
     //@@ Update these values for the output rows and cols of the output
     //@@ Do not use the results from the answer matrix
+    rows = host_a.shape[0];
+    cols = host_b.shape[1];
 
     // Allocate the memory for the target.
     host_c.shape[0] = rows;
@@ -55,7 +78,7 @@ int main(int argc, char *argv[])
     NaiveMatrixMultiply(&host_a, &host_b, &host_c);
 
     // // Call to print the matrix
-    // PrintMatrix(&host_c);
+    //PrintMatrix(&host_c);
 
     // Check the result of the matrix multiply
     CheckMatrix(&answer, &host_c);
