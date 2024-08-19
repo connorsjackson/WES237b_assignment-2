@@ -1,5 +1,5 @@
-# ARM Neon Block Matrix Multiplication
-Once again, start by copying your unrolled block matrix multiplication.  Then update it to use ARM Neon Intrinsics.  Make sure you update your Makefile appropriately.
+# Naive Matrix Multiply
+This is the starter code for a CPU-based Naive matrix multiply.  This implementation should have 3 nested for loops.
 
 ## Report
-In your report, once again run `time`.  What has changed, why has it changed?
+For your report, please execute the `time` command and store the result.  Consider what each of these three metrics mean.
